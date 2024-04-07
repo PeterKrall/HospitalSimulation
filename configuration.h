@@ -1,7 +1,9 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 #include <string.h>
+#ifndef USE_CONFIGURATION_INSTANCE
 #define replace7
+#endif
 class Configuration
 {
 #ifdef single1 // 0.019|0.009
