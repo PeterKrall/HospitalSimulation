@@ -1,0 +1,13 @@
+configuration: ./../HospitalSimulation/data/single5_20240407_125022.csv
+last_day: 600
+exposed_state_duration: 3
+exchange_rate: 0.12
+immune_on_arrival: 0
+number_of_contact_events_per_day: 20
+active_state_duration_1: 4
+transmission_probability_1: 0.12
+active_state_duration_2: 4
+transmission_probability_2: 0
+time_of_strain2_appearance: 300
+
+result: ./../HospitalSimulation/data/single5_20240407_125022.csv
