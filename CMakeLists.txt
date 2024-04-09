@@ -16,6 +16,8 @@ add_executable(HospitalSimulation
   main.cpp
   configuration.h
   hospital.h hospital.cpp
+  configuration.cpp
+
 )
 target_link_libraries(HospitalSimulation Qt${QT_VERSION_MAJOR}::Core)
 

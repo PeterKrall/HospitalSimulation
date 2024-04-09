@@ -20,17 +20,21 @@ Hospital::Hospital(std::ofstream &out)
          << "\n";
 
     //
-    immune = Configuration::immune_on_arrival;
+    immune = Configuration::instance()->immune_on_arrival();
     this->out = &out;
     {
-        for (int i = 0; i < Configuration::exposed_state_duration + Configuration::active_state_duration_1; i++)
+        for (int i = 0;
+             i < Configuration::instance()->exposed_state_duration()  + Configuration::instance()->active_state_duration_1();
+             i++)
         {
             expositions_strain_1.insert(expositions_strain_1.begin(),0);
         }
     }
     expositions_strain_1.insert(expositions_strain_1.begin(),0.0001);
     {
-        for (int i = 0; i < Configuration::exposed_state_duration + Configuration::active_state_duration_2; i++)
+        for (int i = 0;
+             i < Configuration::instance()->exposed_state_duration() + Configuration::instance()->active_state_duration_2();
+             i++)
         {
             expositions_strain_2.insert(expositions_strain_2.begin(),0);
         }
@@ -41,14 +45,14 @@ double Hospital::go()
 {
     double new_expositions = 0.0;
     int today = 0;
-    while (today++ < Configuration::last_day)
+    while (today++ < Configuration::instance()->last_day())
     {
         *out << today << ";";
         std::cout << today << ";";
         new_expositions = day();
         night();
-        if ((today == Configuration::time_of_strain2_appearance())
-            && Configuration::transmission_probability_1 < Configuration::transmission_probability_2
+        if ((today == Configuration::instance()->time_of_strain2_appearance())
+            && Configuration::instance()->transmission_probability_1() < Configuration::instance()->transmission_probability_2()
             )
         {
             expositions_strain_2.insert(expositions_strain_2.begin(),0.0001);
@@ -64,20 +68,20 @@ double Hospital::day()
     long double complement_infection_probability_1 = 1;
     long double complement_infection_probability_2 = 1;
     {
-        std::vector<long double>::iterator it = expositions_strain_1.begin()+Configuration::exposed_state_duration;
-        for (int i = 0; i < Configuration::active_state_duration_1; i++)
+        std::vector<long double>::iterator it = expositions_strain_1.begin()+Configuration::instance()->exposed_state_duration();
+        for (int i = 0; i < Configuration::instance()->active_state_duration_1(); i++)
         {
-            active_cases_1 += *it++ * pow(1.0-Configuration::exchange_rate,Configuration::exposed_state_duration+1+i);
+            active_cases_1 += *it++ * pow(1.0-Configuration::instance()->exchange_rate(),Configuration::instance()->exposed_state_duration()+1+i);
         }
-        complement_infection_probability_1 = pow((complement_infection_probability_1-active_cases_1*Configuration::transmission_probability_1),Configuration::number_of_contact_events_per_day);
+        complement_infection_probability_1 = pow((complement_infection_probability_1-active_cases_1*Configuration::instance()->transmission_probability_1()),Configuration::instance()->number_of_contact_events_per_day());
     }
     {
-        std::vector<long double>::iterator it = expositions_strain_2.begin()+Configuration::exposed_state_duration;
-        for (int i = 0; i < Configuration::active_state_duration_2; i++)
+        std::vector<long double>::iterator it = expositions_strain_2.begin()+Configuration::instance()->exposed_state_duration();
+        for (int i = 0; i < Configuration::instance()->active_state_duration_2(); i++)
         {
-            active_cases_2 += *it++ * pow(1.0-Configuration::exchange_rate,Configuration::exposed_state_duration+1+i);
+            active_cases_2 += *it++ * pow(1.0-Configuration::instance()->exchange_rate(),Configuration::instance()->exposed_state_duration()+1+i);
         }
-        complement_infection_probability_2 = pow((complement_infection_probability_2-active_cases_2*Configuration::transmission_probability_2),Configuration::number_of_contact_events_per_day);
+        complement_infection_probability_2 = pow((complement_infection_probability_2-active_cases_2*Configuration::instance()->transmission_probability_2()),Configuration::instance()->number_of_contact_events_per_day());
     }
     long double raw_infection_probability_1 = 1; raw_infection_probability_1 -= complement_infection_probability_1;
     long double raw_infection_probability_2 = 1; raw_infection_probability_2 -= complement_infection_probability_2;
@@ -118,5 +122,5 @@ double Hospital::day()
 }
 void Hospital::night()
 {
-    immune = immune * (1-Configuration::exchange_rate) + Configuration::exchange_rate * Configuration::immune_on_arrival;
+    immune = immune * (1-Configuration::instance()->exchange_rate()) + Configuration::instance()->exchange_rate() * Configuration::instance()->immune_on_arrival();
 }
