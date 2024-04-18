@@ -1,0 +1,1 @@
+set(__QT_DEPLOY_TARGET_HospitalSimulation_FILE /home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/HospitalSimulation)

@@ -9,8 +9,9 @@ class Hospital
 public:
     Hospital(std::ofstream &out);
     double go();
+
 private:
-    std::ofstream* out;
+    std::ofstream *out;
     std::vector<long double> expositions_strain_1;
     std::vector<long double> expositions_strain_2;
     long double immune = 0;

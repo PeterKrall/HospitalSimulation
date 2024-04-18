@@ -1,0 +1,9 @@
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/HospitalSimulation.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/edit_cache.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/rebuild_cache.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/list_install_components.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/install.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/install/local.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/install/strip.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/HospitalSimulation_autogen_timestamp_deps.dir
+/home/pk/HospitalSimulation/build/Desktop_Qt_6_7_0-Debug/CMakeFiles/HospitalSimulation_autogen.dir
