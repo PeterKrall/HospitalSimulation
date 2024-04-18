@@ -11,6 +11,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_library(RINSIDE NAMES RInside PATHS ${LIBPATH_RINSIDE} REQUIRED)
+find_library(R NAMES R PATHS ${LIBPATH_R} REQUIRED)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -45,6 +47,8 @@ else()
 endif()
 
 target_link_libraries(HospitalSimulationWithGUI PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(HospitalSimulationWithGUI PRIVATE ${RINSIDE})
+target_link_libraries(HospitalSimulationWithGUI PRIVATE ${R})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
@@ -66,6 +70,10 @@ install(TARGETS HospitalSimulationWithGUI
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+include_directories(${INCLUDE_R})
+include_directories(${INCLUDE_RCPP})
+include_directories(${INCLUDE_RINSIDE})
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(HospitalSimulationWithGUI)
