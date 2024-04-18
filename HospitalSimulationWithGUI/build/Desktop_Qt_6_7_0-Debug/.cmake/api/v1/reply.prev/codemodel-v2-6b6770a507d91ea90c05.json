@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-2d8e76015702ffd99b42.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "HospitalSimulationWithGUI",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "HospitalSimulationWithGUI::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HospitalSimulationWithGUI-Debug-00185e620e8a75c2dbd5.json",
+					"name" : "HospitalSimulationWithGUI",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HospitalSimulationWithGUI_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HospitalSimulationWithGUI_autogen-Debug-0f6023cf575ecf91a731.json",
+					"name" : "HospitalSimulationWithGUI_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "HospitalSimulationWithGUI_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-HospitalSimulationWithGUI_autogen_timestamp_deps-Debug-e084f7ab5855d5884ffc.json",
+					"name" : "HospitalSimulationWithGUI_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/pk/HospitalSimulation/HospitalSimulationWithGUI/build/Desktop_Qt_6_7_0-Debug",
+		"source" : "/home/pk/HospitalSimulation/HospitalSimulationWithGUI"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
