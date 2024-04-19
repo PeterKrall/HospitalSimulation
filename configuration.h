@@ -19,11 +19,10 @@ public:
     long double transmission_probability_2();
     int time_of_strain2_appearance();
 
-    static Configuration *instance(); // set the static member values using GUI, DB or whatever
+    static Configuration* instance(); // set the static member values using GUI, DB or whatever
 private:
-    static Configuration *the_instance;
+    static Configuration* the_instance;
     Configuration();
-
 public:
 
 };
